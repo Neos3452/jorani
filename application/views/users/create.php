@@ -445,7 +445,7 @@ echo form_open('users/create', $attributes); ?>
                 data: { login: $("#login").val() }
                 })
                 .done(function( msg ) {
-                    if (msg == "true") {
+                    if (msg == "true" || msg === true) {
                         $("#lblLoginAlert").hide();
                     } else {
                         $("#lblLoginAlert").show();
@@ -517,7 +517,7 @@ echo form_open('users/create', $attributes); ?>
                 data: { login: $("#login").val() }
                 })
                 .done(function( msg ) {
-                    if (msg == "true") {
+                    if (msg == "true" || msg === true) {
                         if ($('#contract').val() == "") {
                             bootbox.confirm("<?php echo lang('users_create_no_contract_confirm');?>", function(result) {
                                 if (result == true) {
